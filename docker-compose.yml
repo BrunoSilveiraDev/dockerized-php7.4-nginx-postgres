@@ -7,9 +7,9 @@ services:
         container_name: php
         ports:
             - "8080:80"
-        working_dir: '/code'
+        working_dir: '/app'
         volumes:
-            - ./code:/var/www/html
+            - ./app:/var/www/html
         depends_on: 
             - postgres
         networks:
@@ -26,18 +26,18 @@ services:
             - php-network
     
     # *********** PHP myAdmin container ************
-    # pgadmin:
-    #     image: dpage/pgadmin4
-    #     container_name: pgadmin
-    #     environment:
-    #         PGADMIN_DEFAULT_EMAIL: "joedoe@email.com"
-    #         PGADMIN_DEFAULT_PASSWORD: "root123"
-    #     ports:
-    #         - "8088:80"
-    #     depends_on:
-    #         - postgres
-    #     networks:
-    #         - php-network
+    pgadmin:
+        image: dpage/pgadmin4
+        container_name: pgadmin
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "bruno@email.com"
+            PGADMIN_DEFAULT_PASSWORD: "root123"
+        ports:
+            - "8088:80"
+        depends_on:
+            - postgres
+        networks:
+            - php-network
         
 
 networks:
