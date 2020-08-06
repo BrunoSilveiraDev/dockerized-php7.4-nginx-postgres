@@ -2,15 +2,15 @@ version: '3.3'
 
 services:
     php:
-        build: ./php-image
+        build: .
         image: php7.4-fpm-nginx
         container_name: php
         ports:
             - "8080:80"
-        working_dir: '/app'
+        working_dir: '/var/www/html'
         volumes:
             - ./app:/var/www/html
-        depends_on: 
+        depends_on:
             - postgres
         networks:
             - php-network
