@@ -1,0 +1,19 @@
+{
+  "name": "brunosilveiradev/dockerized-php7.4-nginx-postgres",
+  "description": "A project made with docker-compose and composer",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Bruno Silveira",
+          "email": "brunosilvcarv@gmail.com",
+          "role": "Developer"
+      }
+  ],
+  "autoload": {
+      "psr-4": {
+          "App\\": "src/"
+      }
+  },
+  "require": {}
+}
